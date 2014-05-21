@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 07:35:18 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 10:57:38 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/21 19:22:16 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ int		ft_analyse(char *str)
 	return (counter);
 }
 
-void	(* ft_init_fontions(void))(t_env *, char *)
+void	(* ft_init_fontions(void))(t_env *, char *, int)
 {
-	void		(*handelers[8])(t_env *, char *);
+	void		(*handelers[8])(t_env *, char *, int);
 
 	handelers[0] = hf_join;
-	/*handelers[1] = hf_nick;
+	handelers[1] = hf_nick;
 	handelers[2] = hf_who;
-	handelers[3] = hf_msg;
+	/*handelers[3] = hf_msg;
 	handelers[4] = hf_quit_chanel;
 	handelers[5] = hf_quit;
 	handelers[6] = hf_help;
@@ -50,7 +50,7 @@ void	ft_handle_input(t_env *env, int fd)
 {
 	char			buff[1024];
 	int				rc;
-	static void		(*handelers[8])(t_env *, char *) = {NULL};
+	static void		(*handelers[8])(t_env *, char *, int) = {NULL};
 
 	if (handelers[1] == NULL)
 		(*handelers) = ft_init_fontions();
@@ -66,5 +66,5 @@ void	ft_handle_input(t_env *env, int fd)
 	}
 	rc = ft_analyse(buff);
 	printf("Funtion we are calling to handle is %d\n", rc);
-	(*handelers[rc])(env, buff);
+	(*handelers[rc])(env, buff, fd);
 }

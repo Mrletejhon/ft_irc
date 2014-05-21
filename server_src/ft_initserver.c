@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/20 10:07:49 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 10:10:14 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/21 19:25:23 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ t_env	*ft_init_server(char *port)
 
 	on = 1;
 	env = (t_env *)malloc(sizeof(t_env));
-	env->users_list= NULL;
+	env->users_list = NULL;
+	env->rooms_list = NULL;
+	env->to_send = NULL;
 	if ((env->stream_socket = socket(AF_INET, SOCK_STREAM, 0)) < 0)
 		ft_socket_error();
 	if (setsockopt(env->stream_socket, SOL_SOCKET,  SO_REUSEADDR, (char *)&on, sizeof(on)) < 0)

@@ -6,13 +6,13 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/20 10:05:12 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 10:50:11 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/21 20:08:08 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 # define SERVER_H
-# define COMANDS "/join|/nick|/who|/msg|/join|/quitchanel|/quit|/help"
+# define COMANDS "/join|/nick|/who|/msg|/join|/quitchanel|/quit|/help|/msgch"//where to show conected chanels ?
 # include <sys/select.h>
 # include <netinet/in.h>
 
@@ -32,13 +32,15 @@ typedef struct			s_usercont
 typedef struct			s_chat_rooms
 {
 	char				*name;
-	t_user				*users;
+	t_usercont			*users;
+	struct s_chat_rooms	*next;
 }						t_chat_rooms;
 
 typedef struct			s_tosend
 {
 	int					fd;
 	char				*message;
+	struct s_tosend		*next;
 }						t_tosend;
 
 typedef struct			s_env
@@ -53,12 +55,16 @@ typedef struct			s_env
 	struct timeval		timeout;
 	t_user				*users_list;
 	t_chat_rooms		*rooms_list;
+	t_tosend			*to_send;
 }						t_env;
 
 void	ft_create_user(t_env *env, int fd);
 void	ft_handle_input(t_env *env, int fd);
 void	ft_delete_user(t_env *env, int fd);
 t_env	*ft_init_server(char *port);
-void	hf_join(t_env *env, char *str);
+void	hf_join(t_env *env, char *str, int fd);
+void	hf_nick(t_env *env, char *str, int fd);
+void	hf_who(t_env *env, char *str, int fd);
+void	add_to_queue(t_env *env, char *str, int fd);
 
 #endif

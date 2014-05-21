@@ -13,7 +13,8 @@
 CC = gcc
 CFLAGS = -I ../libft/includes/ #-Wall -Werror -Wextra 
 NAME = serveur
-SRCS = main.c ft_handle_input.c ft_create_user.c ft_initserver.c hf_join.c
+SRCS = main.c ft_handle_input.c ft_create_user.c ft_initserver.c hf_join.c \
+		add_to_send.c hf_who.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

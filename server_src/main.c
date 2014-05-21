@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/20 10:05:08 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 10:22:16 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/21 18:24:11 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_handle_server(t_env *env)
 		memcpy(&(env->working_out), &(env->master_out), sizeof(env->master_out));
 		ret = select(env->fd_max + 1, &(env->working_in), &(env->working_out), NULL, &(env->timeout));
 		dispach_client(env, ret);
+		
 		/*
 		** Handle the stuff.
 		*/
