@@ -6,13 +6,13 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/20 10:05:12 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 20:08:08 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/22 20:32:05 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERVER_H
 # define SERVER_H
-# define COMANDS "/join|/nick|/who|/msg|/join|/quitchanel|/quit|/help|/msgch"//where to show conected chanels ?
+# define COMANDS "/join|/nick|/who|/msg|/leave|/quit|/help|/msgch"//where to show conected chanels ?
 # include <sys/select.h>
 # include <netinet/in.h>
 
