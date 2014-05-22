@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 07:35:18 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 19:22:16 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/22 21:07:24 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	(* ft_init_fontions(void))(t_env *, char *, int)
 	handelers[0] = hf_join;
 	handelers[1] = hf_nick;
 	handelers[2] = hf_who;
-	/*handelers[3] = hf_msg;
-	handelers[4] = hf_quit_chanel;
+	handelers[3] = hf_msg;
+	handelers[4] = hf_leave;
 	handelers[5] = hf_quit;
-	handelers[6] = hf_help;
+	/*handelers[6] = hf_help;
 	handelers[7] = hf_message;*/
 	return ((*handelers));
 }
