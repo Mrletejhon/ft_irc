@@ -6,13 +6,13 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 20:06:40 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/22 20:19:24 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/23 08:53:33 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 
-char		*get_user(char *str)
+char		*get_first_word(char *str)
 {
 	int		counter;
 	char	*username;
@@ -53,7 +53,7 @@ void		hf_msg(t_env *env, char *str, int fd)
 	int		fdr;
 
 	str = str + 5;
-	usr = get_user(str);
+	usr = get_first_word(str);
 	str = str + ft_strlen(usr) + 1;
 	fdr = get_client_fd(usr, env->users_list);
 	if (fdr == -1)
