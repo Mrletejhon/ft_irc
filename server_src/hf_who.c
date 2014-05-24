@@ -6,11 +6,13 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 19:22:48 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/22 19:17:37 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 02:02:47 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void	ft_make_responce(t_env *env, t_chat_rooms *tmp, int fd)
 {

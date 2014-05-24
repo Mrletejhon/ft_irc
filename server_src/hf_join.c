@@ -6,11 +6,14 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 10:40:05 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/23 09:05:43 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 02:02:29 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
+#include <stdlib.h>
+#include <libft.h>
+#include <stdio.h>
 
 t_usercont		*ft_add_user(t_user *user)
 {
@@ -53,9 +56,9 @@ void			add_user_to_room(int fd, t_env *env, t_chat_rooms *room)
 		tmp_u = tmp_u->next;
 	}
 	tmp_uc = room->users;
-	while (tmp_u->next != NULL)
-		tmp_u = tmp_u->next;
-	tmp_u->next = ft_add_user(tmp_u);
+	while (tmp_uc->next != NULL)
+		tmp_uc = tmp_uc->next;
+	tmp_uc->next = ft_add_user(tmp_u);
 }
 
 void			hf_join(t_env *env, char *str, int fd)

@@ -6,9 +6,11 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/23 08:41:46 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/23 08:49:13 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 02:05:48 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "server.h"
 
 void	hf_help(t_env *env, char *str, int fd)
 {

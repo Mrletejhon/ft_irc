@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 07:35:18 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/23 08:50:21 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 02:04:06 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	(* ft_init_fontions(void))(t_env *, char *, int)
 	handelers[2] = hf_who;
 	handelers[3] = hf_msg;
 	handelers[4] = hf_leave;
-	handelers[5] = hf_quit;
+	handelers[5] = hf_quit;//pas finis
 	handelers[6] = hf_help;
 	handelers[7] = hf_msgch;
 	return ((*handelers));

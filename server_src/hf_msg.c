@@ -6,11 +6,12 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 20:06:40 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/23 08:53:33 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 02:06:55 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
+#include <stdlib.h>
 
 char		*get_first_word(char *str)
 {
@@ -40,7 +41,7 @@ int			get_client_fd(char *username, t_user *users)
 	{
 		if (ft_strcmp(tmp->username, username) == 0)
 		{
-			return (tmp->fd)
+			return (tmp->fd);
 		}
 		tmp = tmp->next;
 	}
@@ -49,7 +50,7 @@ int			get_client_fd(char *username, t_user *users)
 
 void		hf_msg(t_env *env, char *str, int fd)
 {
-	char	usr;
+	char	*usr;
 	int		fdr;
 
 	str = str + 5;

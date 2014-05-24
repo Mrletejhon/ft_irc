@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/20 10:05:08 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 18:24:11 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/23 19:41:27 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	dispach_client(t_env *env, int ret)
 		{
 			//printf("  Writetable socket is readable = %d\n", i);
 			//ici du coup on peut ecrire xd
+			ft_send_data(env, fd);
 			ret--;
 		}
 		i++;

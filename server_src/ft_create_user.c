@@ -6,13 +6,14 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/21 07:24:27 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/21 10:09:37 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 01:56:04 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
 #include <stdlib.h>
 #include <libft.h>
+#include <stdio.h>
 
 void	ft_create_user(t_env *env, int fd)
 {

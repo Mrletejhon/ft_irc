@@ -6,7 +6,7 @@
 /*   By: sbres <sbres@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/20 10:05:12 by sbres             #+#    #+#             */
-/*   Updated: 2014/05/23 08:57:32 by sbres            ###   ########.fr       */
+/*   Updated: 2014/05/24 01:55:28 by sbres            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,13 @@ t_env	*ft_init_server(char *port);
 void	hf_join(t_env *env, char *str, int fd);
 void	hf_nick(t_env *env, char *str, int fd);
 void	hf_who(t_env *env, char *str, int fd);
+void	hf_msg(t_env *env, char *str, int fd);
+void	hf_leave(t_env *env, char *str, int fd);
+void	hf_quit(t_env *env, char *str, int fd);
+void	hf_help(t_env *env, char *str, int fd);
+void	hf_msgch(t_env *env, char *str, int fd);
 void	add_to_queue(t_env *env, char *str, int fd);
 char	*get_first_word(char *str);
+void	ft_handle_input(t_env *env, int fd);
 
 #endif
